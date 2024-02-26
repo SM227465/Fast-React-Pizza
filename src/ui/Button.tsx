@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface Props {
   children: ReactNode;
-  disabled: boolean;
+  disabled?: boolean;
   to?: string;
   type: 'primary' | 'small' | 'secondary';
 }
