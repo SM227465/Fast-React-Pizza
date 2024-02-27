@@ -6,9 +6,10 @@ interface Props {
   disabled?: boolean;
   to?: string;
   type: 'primary' | 'small' | 'secondary';
+  onClick?: () => void;
 }
 const Button = (props: Props) => {
-  const { children, type, to, disabled } = props;
+  const { children, type, to, disabled, onClick } = props;
 
   const base =
     'inline-block text-sm rounded-full bg-yellow-400 font-semibold uppercase tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed';
@@ -26,6 +27,14 @@ const Button = (props: Props) => {
         {children}
       </Link>
     );
+
+  if (onClick) {
+    return (
+      <button disabled={disabled} className={styles[type]} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
 
   return (
     <button disabled={disabled} className={styles[type]}>

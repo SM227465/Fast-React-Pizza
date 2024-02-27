@@ -1,9 +1,9 @@
 import Button from '../../ui/Button';
 import { formatCurrency } from '../../utils/helpers';
-import { Cart } from './Cart';
+import { Pizza } from './cartSlice';
 
 interface Props {
-  item: Cart;
+  item: Pizza;
 }
 
 const CartItem = (props: Props) => {
