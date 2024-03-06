@@ -6,7 +6,7 @@ interface Props {
   disabled?: boolean;
   to?: string;
   type: 'primary' | 'small' | 'secondary' | 'round';
-  onClick?: () => void;
+  onClick?: (event?: any) => void;
 }
 const Button = (props: Props) => {
   const { children, type, to, disabled, onClick } = props;

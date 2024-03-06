@@ -1,10 +1,15 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getAddress } from '../../services/apiGeocoding';
 
+interface Position {
+  latitude: number;
+  longitude: number;
+}
+
 const initialState = {
   username: '',
   status: 'idle',
-  position: {},
+  position: {} as Position,
   address: '',
   error: '',
 };
